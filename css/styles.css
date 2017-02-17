@@ -1,4 +1,4 @@
-ebody {
+body {
   background-color: #455a64; }
 
 label {
@@ -35,94 +35,91 @@ img {
   width: 80%;
   margin-left: 10%; }
 
-  #google {
-    width: 25px;
-    height: 25px;
-    margin-top: 5px;
-    margin-left: -10px;
-  }
-
-  #auth-button {
-    border-radius: 50px;
-    width: 20px;
-    margin-left: -10px;
-  }
-
-
-/*ratings*/
-fieldset {
-padding: 15px;
-height: 50px;
-border: none;
-margin-left: 150px;
-}
-
-.rating:not(:checked) > input {
-    position: initial;
-    top:-9999px;
-    clip:rect(0,0,0,0);
-}
-
-.rating:not(:checked) > label {
-    float:right;
-    width:.1em;
-    padding:0 .5em;
-    overflow: show;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:200%;
-    line-height:1.2;
-    color:#ddd;
-    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
-}
-
-.rating:not(:checked) > label:before {
- content: '★ '; 
-   
-}
-
-.rating > input:checked ~ label {
-    color: #f70;
-    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
-}
-
-.rating:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label {
-    color: gold;
-    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
-}
-
-.rating > input:checked + label:hover,
-.rating > input:checked + label:hover ~ label,
-.rating > input:checked ~ label:hover,
-.rating > input:checked ~ label:hover ~ label,
-.rating > label:hover ~ input:checked ~ label {
-    color: #ea0;
-    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
-}
-
-.rating > label:active {
-    position:relative;
-    top:2px;
-    left:2px;
-}
-
-[type="radio"]+label:before, [type="radio"]+label:after {
-  content: none;
-}
-
-.rating > input:checked ~ label {
-
-}
-
-[type="radio"]+label:before, [type="radio"]+label:after {
-  position: initial;
-      margin: 0px; 
-}
-
-
-[type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after {
-  border: none;
-}
+.button {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  flex: 0 0 20px;
+  display: inline-block;
+  padding: 0;
+  margin: 1px;
+  border: 0;
+  border-radius: 100%;
+  overflow: hidden;
+  font-size: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  margin-top: 4px; }
+  .button.primary {
+    background: #E91E63;
+    color: white; }
+    .button.primary .ripples:before {
+      background: white; }
+  .button.secondary {
+    background: #26A69A;
+    color: black; }
+    .button.secondary .ripples:before {
+      background: black; }
+  .button.secondary:hover {
+    background: grey;
+    color: white; }
+    .button.secondary:hover .ripples:before {
+      background: black; }
+  .button .icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    line-height: 20px;
+    pointer-events: none; }
+  .button .ripples {
+    flex-flow: row wrap;
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 100%;
+    -webkit-mask-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC"); }
+  .button .ripple {
+    -webkit-appearance: none;
+    position: relative;
+    display: flex;
+    margin: 0;
+    border: 0;
+    background: none;
+    flex: 0 0 100%/sqrt(64);
+    padding-bottom: 100%/sqrt(64); }
+    .button .ripple:focus {
+      outline: 0; }
+    .button .ripple:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -56px;
+      height: 112px;
+      width: 112px;
+      border-radius: 100%;
+      transform: scale(0);
+      opacity: 0.2;
+      pointer-events: none; }
+    .button .ripple:focus:before {
+      animation: grow 1s; }
+@keyframes grow {
+  0% {
+    transform: scale(0); }
+  70% {
+    transform: scale(1);
+    opacity: 0.2; }
+  100% {
+    transform: scale(2);
+    opacity: 0; } }
+#google {
+  width: 20px;
+  height: 20px;
+  margin-top: 8px; }
 
 /*# sourceMappingURL=styles.css.map */

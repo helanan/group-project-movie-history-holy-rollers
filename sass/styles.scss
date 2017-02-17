@@ -48,6 +48,111 @@ img{
 	margin-left: 10%;
 }
 
+$cells: 64;
+$divider: sqrt($cells);
+.button {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  flex: 0 0 20px;
+  display: inline-block;
+  padding: 0;
+  margin: 1px;
+  border: 0;
+  border-radius: 100%;
+  overflow: hidden;
+  font-size: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+  margin-top: 4px;
+
+  
+  &.primary {
+    background: #E91E63;
+    color: white;
+    .ripples:before {
+      background: white;
+    }
+  }
+  &.secondary {
+    background: #26A69A;
+    color: black;
+    .ripples:before {
+      background: black;
+    }
+  }
+  &.secondary:hover {
+    background: grey;
+    color: white;
+    .ripples:before {
+      background: black;
+    }
+  }
+  .icon {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    line-height: 20px;
+    pointer-events: none;
+  }
+  
+  .ripples {
+    flex-flow: row wrap;
+    display: flex;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    border-radius: 100%;
+    -webkit-mask-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC');
+  }
+  
+  .ripple {
+    -webkit-appearance: none;
+    position: relative;
+    display: flex;
+    margin: 0;
+    border: 0;
+    background: none;
+    flex: 0 0 (100%/$divider);
+    padding-bottom: (100%/$divider);
+    
+    &:focus {
+      outline: 0;
+    }
+    
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -56px;
+      height: 56px*2;
+      width: 56px*2;
+      border-radius: 100%;
+      transform: scale(0);
+      opacity: 0.2;
+      pointer-events: none;
+    }
+    
+    &:focus {
+      &:before {
+        animation: grow 1s;
+
+        @keyframes grow {
+          0% {transform: scale(0)}
+          70% {transform: scale(1); opacity: 0.2;}
+          100% {transform: scale(2); opacity: 0;}
+        }
 
 
+      }
+    }
+  }
+}
+
+
+#google {
+	width: 20px;
+	height: 20px;
+	margin-top: 8px;
+
+}
 

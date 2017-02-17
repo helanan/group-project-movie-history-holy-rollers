@@ -3,9 +3,8 @@
 //*******************
 // Initialize Modals
 //*******************
-  $(document).ready(function(){
-    $('.modal').modal();
-  });
+
+
 
 
 //*******************
@@ -103,3 +102,4 @@ $("#favoritesBtn").click(function (){
 });
 
 //
+
